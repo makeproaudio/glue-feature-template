@@ -1,0 +1,50 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "projects": {
+    "ui": {
+      "root": "ui/",
+      "sourceRoot": "ui/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "./builders:plugin",
+          "options": {
+            "outputPath": "dist/plugins",
+            "index": "",
+            "main": "ui/src/main.ts",
+            "polyfills": "ui/src/polyfills.ts",
+            "tsConfig": "ui/tsconfig.json",
+            "assets": [],
+            "styles": [],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [],
+              "optimization": true,
+              "outputHashing": "none",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": false,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ui"
+}

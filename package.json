@@ -2,8 +2,9 @@
   "name": "glue-feature-my-cool-feature",
   "version": "1.0.0",
   "scripts": {
-    "build-builder": "tsc -p builders/tsconfig.builders.json",
-    "build": "ng build --prod --modulePath=./ui/ui.module#UIModule"
+    "build:ui": "ng build --prod --modulePath=./ui/ui.module#UIModule",
+    "build:core": "tsc",
+    "build": "npm run build:core && npm run build:ui"
   },
   "private": true,
   "dependencies": {

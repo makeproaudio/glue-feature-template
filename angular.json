@@ -10,7 +10,7 @@
       "schematics": {},
       "architect": {
         "build": {
-          "builder": "./builders:plugin",
+          "builder": "@makeproaudio/glue-feature-tools:ui",
           "options": {
             "outputPath": "dist/plugins",
             "index": "",

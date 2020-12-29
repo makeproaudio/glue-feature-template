@@ -1,5 +1,4 @@
 import { Feature, FeatureSetting, ZoneConfig, SelectionItem } from "@makeproaudio/glue-feature-tools";
-import {  } from "@makeproaudio/glue-feature-tools";
 import { Stack } from "@makeproaudio/makehaus-nodered-lib";
 
 export class MyFeature implements Feature {

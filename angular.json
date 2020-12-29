@@ -12,7 +12,7 @@
         "build": {
           "builder": "@makeproaudio/glue-feature-tools:ui",
           "options": {
-            "outputPath": "dist/plugins",
+            "outputPath": "dist/ui",
             "index": "",
             "main": "ui/src/main.ts",
             "polyfills": "ui/src/polyfills.ts",

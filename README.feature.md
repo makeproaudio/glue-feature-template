@@ -1,4 +1,4 @@
-# {{FEATURENAME}} Feature
+# {{NAME}} Feature
 > {{DESCRIPTION}}
 
 ## Features:

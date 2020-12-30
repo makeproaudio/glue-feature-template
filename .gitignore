@@ -5,6 +5,9 @@
 /tmp
 /out-tsc
 
+# npm pack output files
+*.tgz
+
 # dependencies
 /node_modules
 

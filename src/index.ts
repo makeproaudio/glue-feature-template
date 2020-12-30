@@ -1,8 +1,13 @@
 import { Feature, FeatureSetting, ZoneConfig, SelectionItem } from "@makeproaudio/glue-feature-tools";
 import { Stack } from "@makeproaudio/makehaus-nodered-lib";
+import { setSynapsesManager } from "@makeproaudio/parameters-js";
 
 export default class MyFeature implements Feature {
     public zones: ZoneConfig[];
+
+    public constructor(settings: FeatureSetting, registry: any, synapsesManager: any) {
+        setSynapsesManager(synapsesManager);
+    }
 
     public init?(): void {
         //

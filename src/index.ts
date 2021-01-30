@@ -1,11 +1,12 @@
 import { Feature, FeatureSetting, ZoneConfig, SelectionItem } from "@makeproaudio/glue-feature-tools";
-import { Stack } from "@makeproaudio/makehaus-nodered-lib";
-import { setSynapsesManager } from "@makeproaudio/parameters-js";
+import { Parameter, setSynapsesManager } from "@makeproaudio/parameters-js";
+import { EventEmitter } from "events";
 
-export default class MyFeature implements Feature {
+export default class MyFeature extends EventEmitter implements Feature {
     public zones: ZoneConfig[] = [];
 
     public constructor(settings: FeatureSetting, registry: any, synapsesManager: any) {
+        super();
         setSynapsesManager(synapsesManager);
     }
 
@@ -17,24 +18,19 @@ export default class MyFeature implements Feature {
         //
     }
 
-    public takeStacksForZone(zoneConfig: ZoneConfig, stacks: Map<number, Stack>): void {
-        //
+    public giveParametersForZone(zoneConfig: ZoneConfig): Map<number, Parameter<any>> | Promise<Map<number, Parameter<any>>> {
+        return new Map();
     }
 
-    public removeZone(zoneConfig: ZoneConfig, stacks: Map<number, Stack>): void {
-        //
+    public giveParametersForNavigatorSelection?(selection: 1 | 2 | 3): Map<number, Parameter<any>> | false | Promise<Map<number, Parameter<any>> | false> { 
+        return false;
     }
 
-    public takeSelectorForZone?(zoneConfig: ZoneConfig, selector: any): void {
-        //
-    }
-
-    public getSelectionItems?(zoneConfig: ZoneConfig): SelectionItem[] {
-        return [];
+    public giveParametersForNavigatorMapping?(mapping: 1 | 2 | 3 | 4 | 5): Map<number, Parameter<any>> | false | Promise<Map<number, Parameter<any>> | false> { 
+        return false;
     }
 
     public onSettingsChange?(settings: FeatureSetting): void {
         //
     }
-
 }
